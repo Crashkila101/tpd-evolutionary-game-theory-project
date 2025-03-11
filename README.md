@@ -12,6 +12,7 @@ git clone https://github.com/Crashkila101/tsp-evolutionary-search-project.git
 
 2. Create a new python environment:
 ```bash
+cd tsp-evolutionary-search-project
 python -m venv venv
 ```
 
@@ -36,6 +37,7 @@ git clone https://github.com/Crashkila101/tsp-evolutionary-search-project.git
 
 2. Create a new python environment:
 ```bash
+cd tsp-evolutionary-search-project
 python -m venv venv
 ```
 
