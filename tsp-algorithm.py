@@ -2,8 +2,8 @@ import numpy as np
 import tsplib95
 import random
 import matplotlib.pyplot as plt
-import itertools
 import time
+from args import args
 
 # Load TSP Data
 def load_tsp_data(file_path):
@@ -105,7 +105,7 @@ def swap_mutate(individual, mutation_rate):
 def inversion_mutate(individual, mutation_rate):
     if random.random() < mutation_rate:
         idx1, idx2 = sorted(random.sample(range(len(individual)), 2))
-        individual[a:b+1] = reversed(individual[a:b+1])
+        individual[idx1:idx2+1] = reversed(individual[idx1:idx2+1])
     return individual
 
 
@@ -127,10 +127,7 @@ def genetic_algorithm(cities,
     best_distance = float('inf')
     fitness_history = []
     crossover = ox_crossover if crossover_fn == "ox" else pmx_crossover
-    if mutation_fn == "swap":
-        mutate = swap_mutate 
-    elif mutation_fn == "inversion":
-        mutate = inversion_mutate 
+    mutate = swap_mutate if mutation_fn == "swap" else inversion_mutate
     
     print(f"Calculating fitness over {generations} generations with {crossover_fn} crossover and {mutation_fn} mutation:")
 
@@ -211,7 +208,8 @@ def plot_fitness(fitness_history):
 # Run the genetic algorithm
 if __name__ == "__main__":
     # Load TSP data
-    cities = load_tsp_data("tsp-files/kroA100.tsp")
+    file_path = args.file_path
+    cities = load_tsp_data(file_path)
     distance_matrix = calculate_distance_matrix(cities)
 
 
@@ -219,13 +217,13 @@ if __name__ == "__main__":
 
     best_tour, best_distance, fitness_history = genetic_algorithm(
         cities, distance_matrix,
-        population_size=1000,
-        generations=300,
-        crossover_rate=0.9,
-        mutation_rate=0.02,
-        elitism_size=10,
-        mutation_fn="swap",
-        crossover_fn="ox"
+        population_size=args.pop_size,
+        generations=args.generations,
+        crossover_rate=args.cross_rate,
+        mutation_rate=args.mut_rate,
+        elitism_size=args.elitism_size,
+        mutation_fn=args.mut_fn,
+        crossover_fn=args.cross_fn
     )
 
     time_taken = time.time() - start_time
