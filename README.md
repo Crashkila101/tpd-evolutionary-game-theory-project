@@ -10,17 +10,17 @@ This program requires **Python 3** to be installed on your system in order to wo
 git clone https://github.com/Crashkila101/tsp-evolutionary-search-project.git
 ```
 
-2. Create a new python environment
+2. Create a new python environment:
 ```bash
 python -m venv venv
 ```
 
-3. Activate the environment
+3. Activate the environment:
 ```bash
 source venv/bin/activate
 ```
 
-4. Install the required packages from requirements.txt
+4. Install the required packages from requirements.txt:
 ```bash
 pip install -r requirements.txt
 #(This may take a while so be patient)
@@ -34,17 +34,17 @@ pip install -r requirements.txt
 git clone https://github.com/Crashkila101/tsp-evolutionary-search-project.git
 ```
 
-2. Create a new python environment
+2. Create a new python environment:
 ```bash
 python -m venv venv
 ```
 
-3. Activate the environment
+3. Activate the environment:
 ```bash
 venv/Scripts/activate.bat
 ```
 
-4. Install the required packages from requirements.txt
+4. Install the required packages from requirements.txt:
 ```bash
 pip install -r requirements.txt
 #(This may take a while so be patient)
