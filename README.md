@@ -59,12 +59,19 @@ If you want to tweak your algorithm, you can change the values of hyperparameter
 
 ## Arguments
 **--file_path <path-to-file>** (optional) Specify the path at which the TSP file resides (default: tsp-files/kroA100.tsp)
+
 **--pop_size <population>** (optional) Specify the population size for the algorithm (default: 750)
+
 **--generations <generations>** (optional) Specify how many generations the algorithm should run (default: 300)
+
 **--cross_rate <rate>** (optional) Specifies the rate at which genes from both parents combine into a child (default: 0.9)
+
 **--mut_rate <rate>** (optional) Specify the rate at which genes mutate (default: 0.02)
+
 **--elitism_size <size>** (optional) Specify the number of 'elites' that pass down to the next generation (default: 10)
+
 **--mut_fn <function>** (optional) Specify whether to use swap ["swap"] or inversion mutation ["invert"] (default: swap)
+
 **--cross_fn <function>** (optional) Specify whether to use order crossover ["ox"] or pmx crossover ["pmx"] (default: ox)
 
 Example:
