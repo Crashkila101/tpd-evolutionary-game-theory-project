@@ -7,12 +7,12 @@ This program requires **Python 3** to be installed on your system in order to wo
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Crashkila101/tsp-evolutionary-search-project.git
+git clone https://github.com/Crashkila101/tpd-evolutionary-game-theory-project.git
 ```
 
 2. Create a new python environment:
 ```bash
-cd tsp-evolutionary-search-project
+cd tpd-evolutionary-game-theory-project
 python -m venv venv
 ```
 
@@ -32,12 +32,12 @@ pip install -r requirements.txt
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Crashkila101/tsp-evolutionary-search-project.git
+git clone https://github.com/Crashkila101/tpd-evolutionary-game-theory-project.git
 ```
 
 2. Create a new python environment:
 ```bash
-cd tsp-evolutionary-search-project
+cd tpd-evolutionary-game-theory-project
 python -m venv venv
 ```
 
@@ -53,30 +53,30 @@ pip install -r requirements.txt
 ```
 
 ## Running the program
-Run the program by specifying the path to your tsp file, for example:
+Run the program using python
 ```bash
-python tsp-algorithm.py --file_path "tsp-files/berlin52.tsp"
+python tpd-evolutionary-game-theory-project
 ```     
-If you want to tweak your algorithm, you can change the values of hyperparameters in the command line, or alternatively, you can change the default values in args.py to suit your needs.
+If you want to tweak your algorithm, you can change the values of parameters in the command line, or alternatively, you can change the default values in args.py to suit your needs.
 
 ## Arguments
-**--file_path <path-to-file>** (optional) Specify the path at which the TSP file resides (default: tsp-files/kroA100.tsp)
-
 **--pop_size <population>** (optional) Specify the population size for the algorithm (default: 750)
 
 **--generations <generations>** (optional) Specify how many generations the algorithm should run (default: 300)
 
 **--cross_rate <rate>** (optional) Specifies the rate at which genes from both parents combine into a child (default: 0.9)
 
-**--mut_rate <rate>** (optional) Specify the rate at which genes mutate (default: 0.02)
+**--mut_rate <rate>** (optional) Specify the rate at which genes mutate (default: 0.05)
 
-**--elitism_size <size>** (optional) Specify the number of 'elites' that pass down to the next generation (default: 10)
+**--rounds <rounds>** (optional) Specify the number of rounds two agents play for (default: 150)
 
-**--mut_fn <function>** (optional) Specify whether to use swap ["swap"] or inversion mutation ["invert"] (default: swap)
+**--noise <noise>** (optional) Specify the probability that any genome is flipped (default: 0.05)
 
-**--cross_fn <function>** (optional) Specify whether to use order crossover ["ox"] or pmx crossover ["pmx"] (default: ox)
+**--strategy <strategy>** (optional) Specify which strategy the algorithm competes against. 'TFT' is tit-for-tat, 'ALLC' always cooperates, 'ALLD' always defects, and 'EVOLVE' will make the population compete against itself. 'ALL' will compete against every fixed strategy.
+
+**--sample_size <size>** (optional) If running against the population, specify the subset of the population which an individual will play in the iterated prisoner's dilemma (default: 20)
 
 Example:
 ```bash
-python tsp-algorithm.py --file_path "tsp-files/berlin52.tsp" --pop_size 1000 --generations 500 --cross_rate 1.0 --mut_rate 0.05 --elitism_size 5 --mut_fn "invert" --cross_fn "pmx"
+python tpd-algorithm.py --pop_size 1000 --generations 500 --cross_rate 1.0 --mut_rate 0.05 --rounds 200 --noise 0 --strategy 'ALL'
 ```     
