@@ -1,5 +1,5 @@
-# tsp-evolutionary-search-project
-This is a project which aims to solve TSP datasets with the **.tsp** file extension.
+# tpd-evolutionary-search-project
+This is a project which aims to evolve strategies for the the Iterated Prisoner's Dilemma (IPD)
 This program requires **Python 3** to be installed on your system in order to work; you can get it from here: https://www.python.org/downloads/
 
 ## Environment setup for Linux
